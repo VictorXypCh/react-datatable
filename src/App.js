@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import DataTable from './DataTable';
 import {useEffect, useState} from 'react';
 import $ from 'jquery'
 function App() {
