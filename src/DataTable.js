@@ -1,16 +1,15 @@
 import React, { useEffect, useRef } from "react"
 import $ from 'jquery'
  
-export default function DataTable(props) {
+export default function DataTable({id, data}) {
  
 $.DataTable = require('datatables.net')
 const tableRef = useRef()
  
 useEffect(() => {
-    console.log(tableRef.current)
     const table = $(tableRef.current).DataTable(
         {
-            data: props.data,
+            data: data,
                 columns: [
                     { title: "Name"},
                     { title: "Position"},
@@ -30,7 +29,7 @@ useEffect(() => {
 },[])
     return (
         <div>
-            <table className="display" width="100%" ref={ tableRef }></table>
+            <table id={id} className="display" width="100%" ref={ tableRef }></table>
         </div>
          
     )
